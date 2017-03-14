@@ -1,0 +1,20 @@
+type string
+type integer
+type number
+
+
+entity Address  {
+  street : string
+  city : string
+  country : string
+}
+
+entity Bank {
+  bar : Address
+  ime : string
+}
+
+entity Covek {
+  ime : string
+
+}
