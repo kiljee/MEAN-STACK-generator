@@ -40,4 +40,4 @@ def functionModel(this_folder, debug):
     for entity in person_model.entities:
         #For each entity generate java file
         with open(join(srcgen_folder, "%s.js" % entity.name.capitalize()), 'w') as f:
-            f.write(template.render(entity=entity))
+            f.write(template.render(entity=entity, entities= person_model.entities))

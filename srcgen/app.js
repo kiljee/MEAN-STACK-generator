@@ -14,8 +14,7 @@ mongoose.connect(dbUrl, function(err, res){
     console.log('DB CONNECTION SUCCESS: ' + dbUrl)
   }
 })
-var routes = require('./routes/index');
-var users = require('./routes/users');
+
 var Address = require('./routes/Address')
 var Bank = require('./routes/Bank')
 var Covek = require('./routes/Covek')
@@ -32,8 +31,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+
 app.use('/address' ,Address);
 app.use('/bank' ,Bank);
 app.use('/covek' ,Covek);

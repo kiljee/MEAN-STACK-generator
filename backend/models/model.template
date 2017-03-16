@@ -20,10 +20,11 @@
 } #}
 
 var mongoose = require('mongoose')
-
+, Schema = mongoose.Schema
 var {{entity.name}}Schema = new mongoose.Schema({
   {% for property in entity.properties %}
-  {{property.name}}: {type:{{property.type | javatype}}{%if loop.index != entity.properties |length%},{% endif %}
+  {%set vrednost = {'provera' :  True}%}
+  {{property.name}}:{%for ent in entities%} {%if ent.name == property.type | javatype %} {% if vrednost.update({'provera': False}) %}{% endif %} [{ type: Schema.Types.ObjectId, ref: '{{ent.name}}' }]{% endif %}{%endfor%} {%if vrednost.provera%}{{vrednost.foo}}{type:{{property.type | javatype}}}{%endif%}{%if loop.index != entity.properties |length%},{% endif %}
   {% endfor %}
 })
 

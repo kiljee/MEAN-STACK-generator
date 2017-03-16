@@ -3,7 +3,7 @@
 
 var express = require('express')
 var router = express.Router()
-var AddressCtrl = require('../controllers/AddressController')
+var AddressCtrl = require('../controllers/addressController')
 
 router.get('/',function(req, res, next){
 

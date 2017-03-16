@@ -1,6 +1,6 @@
 type string
 type integer
-type number
+type Number
 
 
 entity Address  {
@@ -10,7 +10,7 @@ entity Address  {
 }
 
 entity Bank {
-  bar : Address
+  bar :Address
   ime : string
 }
 

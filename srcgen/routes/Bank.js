@@ -3,7 +3,7 @@
 
 var express = require('express')
 var router = express.Router()
-var BankCtrl = require('../controllers/BankController')
+var BankCtrl = require('../controllers/bankController')
 
 router.get('/',function(req, res, next){
 

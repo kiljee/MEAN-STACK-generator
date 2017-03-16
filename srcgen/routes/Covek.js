@@ -3,7 +3,7 @@
 
 var express = require('express')
 var router = express.Router()
-var CovekCtrl = require('../controllers/CovekController')
+var CovekCtrl = require('../controllers/covekController')
 
 router.get('/',function(req, res, next){
 
