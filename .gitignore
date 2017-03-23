@@ -12,6 +12,10 @@ env/
 build/
 develop-eggs/
 dist/
+srcgen/controllers
+srcgen/models
+srcgen/node_modules
+srcgen/routes
 downloads/
 eggs/
 .eggs/
