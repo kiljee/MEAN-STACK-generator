@@ -18,12 +18,11 @@ mongoose.connect(dbUrl, function(err, res){
 var Address = require('./routes/Address')
 var Bank = require('./routes/Bank')
 var Covek = require('./routes/Covek')
-var routes = require('./routes/index');
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hjs');
+app.set('view engine', 'jade');
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -32,7 +31,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+
 app.use('/address' ,Address);
 app.use('/bank' ,Bank);
 app.use('/covek' ,Covek);

@@ -16,6 +16,7 @@ srcgen/controllers
 srcgen/models
 srcgen/node_modules
 srcgen/routes
+front-gen/app/scripts/entity
 downloads/
 eggs/
 .eggs/
