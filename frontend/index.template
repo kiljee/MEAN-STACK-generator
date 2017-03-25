@@ -65,17 +65,11 @@
         <script src="scripts/app.config.js"></script>
         <!-- endbuild -->
         <script src="scripts/navbar/navbarController.js"></script>
-        <script src="scripts/entity/address/address.js"></script>
-        <script src="scripts/entity/address/allAddressController.js"></script>
-        <script src="scripts/entity/address/addressService.js"></script>
+        {% for entity in entities %}
+        <script src="scripts/entity/{{entity.name | lower }}/{{entity.name | lower }}.js"></script>
+        <script src="scripts/entity/{{entity.name | lower }}/all{{entity.name}}Controller.js"></script>
+        <script src="scripts/entity/{{entity.name | lower }}/{{entity.name | lower }}Service.js"></script>
 
-        <script src="scripts/entity/bank/bank.js"></script>
-        <script src="scripts/entity/bank/allBankController.js"></script>
-        <script src="scripts/entity/bank/bankService.js"></script>
-
-        <script src="scripts/entity/covek/covek.js"></script>
-        <script src="scripts/entity/covek/allCovekController.js"></script>
-        <script src="scripts/entity/covek/covekService.js"></script>
-
+        {% endfor %}
 </body>
 </html>
