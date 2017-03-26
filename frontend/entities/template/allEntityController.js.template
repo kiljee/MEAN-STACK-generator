@@ -9,7 +9,7 @@
 				'{{ entity.name | lower }}Service',
 				function($scope, $state, $rootScope, {{ entity.name | lower }}Service)
 				{
-
+								sessionStorage.removeItem("entityId")
 								$scope.gridOptions = { enableRowSelection: true, enableRowHeaderSelection: false };
 
 								$scope.gridOptions.columnDefs = [
@@ -23,11 +23,12 @@
 								$scope.gridOptions.onRegisterApi = function (gridApi) {
 									$scope.gridApi = gridApi;
 									gridApi.selection.on.rowSelectionChanged($scope, function (row) {
-										$scope.selectedEntityId = row.entity.id;
+										$scope.selectedEntityId = row.entity._id;
 									});
 								};
                 refresh = function(){
 									$scope.selectedEntityId = undefined
+									sessionStorage.removeItem("entityId")
 									{{entity.name | lower}}Service.getAll(
 										function(response){
 
@@ -37,7 +38,37 @@
 										console.log(response);
 									});
 								}
-								refresh()
+
+								$scope.add = function(){
+									$state.go('add{{entity.name}}', {
+										"operation" : "add"
+									});
+								}
+								$scope.edit = function(){
+									if($scope.selectedEntityId !== undefined){
+										sessionStorage.setItem("entityId",$scope.selectedEntityId)
+										$state.go('edit{{entity.name}}', {
+											"operation" : "edit"
+										});
+								 }else{
+									 alert("Niste nista selektovali");
+								 }
+							 }
+
+								$scope.delete = function(){
+									if($scope.selectedEntityId !== undefined){
+										{{entity.name | lower }}Service.delete($scope.selectedEntityId,
+											function(response) {
+												refresh()
+											},
+											function(response) {
+												console.log(response)
+										});
+									}else{
+										alert("Niste nista selektovali");
+									}
+								 }
+											refresh()
 				}
 			]);
 

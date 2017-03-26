@@ -27,7 +27,7 @@ def functionEntityHtml(this_folder, debug):
 
 
     # Load Java template
-    template = jinja_env.get_template('frontend/entities/entity.html.template')
+    template = jinja_env.get_template('frontend/entities/template/entity.html.template')
 
     for entity in person_model.entities:
         #For each entity generate java file

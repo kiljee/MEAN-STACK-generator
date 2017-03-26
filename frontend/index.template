@@ -69,6 +69,7 @@
         <script src="scripts/entity/{{entity.name | lower }}/{{entity.name | lower }}.js"></script>
         <script src="scripts/entity/{{entity.name | lower }}/all{{entity.name}}Controller.js"></script>
         <script src="scripts/entity/{{entity.name | lower }}/{{entity.name | lower }}Service.js"></script>
+        <script src="scripts/entity/{{entity.name | lower }}/addEdit{{entity.name  }}Controller.js"></script>
 
         {% endfor %}
 </body>

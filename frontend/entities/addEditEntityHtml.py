@@ -3,7 +3,7 @@ from os.path import exists, dirname, join
 import jinja2
 from entity_test import get_entity_mm
 
-def functionAllEntity(this_folder, debug):
+def functionAddEditEntityHtml(this_folder, debug):
 
 
     entity_mm = get_entity_mm(debug)
@@ -27,12 +27,12 @@ def functionAllEntity(this_folder, debug):
 
 
     # Load Java template
-    template = jinja_env.get_template('frontend/entities/template/entity.js.template')
+    template = jinja_env.get_template('frontend/entities/template/addEditEntity.html.template')
 
     for entity in person_model.entities:
         #For each entity generate java file
         strName = srcgen_folder + str(entity.name.lower())
         if not exists(strName):
             mkdir(strName)
-        with open(join(strName, "%s.js" % entity.name.lower()), 'w') as f:
+        with open(join(strName, "addEdit%s.html" % entity.name), 'w') as f:
             f.write(template.render(entity=entity))

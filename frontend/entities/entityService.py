@@ -27,7 +27,7 @@ def functionEntityService(this_folder, debug):
 
 
     # Load Java template
-    template = jinja_env.get_template('frontend/entities/entityService.js.template')
+    template = jinja_env.get_template('frontend/entities/template/entityService.js.template')
 
     for entity in person_model.entities:
         #For each entity generate java file
