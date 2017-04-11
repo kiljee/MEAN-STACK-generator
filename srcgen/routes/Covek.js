@@ -22,7 +22,7 @@ router.get('/',function(req, res, next){
   })
 })
 router.get('/:id', function(req, res, next){
-  console.log(req.params.id)
+
   CovekCtrl.findById(req.params.id, function(err,results){
     if(err){
       res.json({
@@ -39,7 +39,6 @@ router.get('/:id', function(req, res, next){
 })
 router.post('/',function(req,res,next){
 
-  console.log(req.body)
   CovekCtrl.create(req.body,function(err,results){
     if(err){
       res.json({
@@ -56,7 +55,6 @@ router.post('/',function(req,res,next){
 })
 router.post('/:id',function(req,res,next){
 
-  console.log(req.params.id)
   CovekCtrl.delete(req.params.id,function(err,results){
     if(err){
       res.json({
@@ -71,9 +69,8 @@ router.post('/:id',function(req,res,next){
     })
   })
 })
-router.put('/:id',function(req,res,next){
-  console.log(req.body)
-  console.log(req.params.id)
+router.post('/edit/:id',function(req,res,next){
+
   CovekCtrl.update(req.params.id,req.body, function(err, results){
     if(err){
       res.json({

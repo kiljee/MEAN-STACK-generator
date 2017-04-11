@@ -28,7 +28,7 @@
                 $http.post(REST_END_POINT.concat('/{{entity.name | lower}}'),element).then(onSuccess,onError);
             },
             edit: function (element, onSuccess, onError) {
-                $http.put(REST_END_POINT.concat('/{{entity.name | lower }}/'+ element.id),element).then(onSuccess,onError);
+                $http.post(REST_END_POINT.concat('/{{entity.name | lower }}/edit/'+ element._id),element).then(onSuccess,onError);
             },
             delete: function(id, onSuccess, onError){
                 $http.post(REST_END_POINT.concat('/{{entity.name | lower}}/'+ id)).then(onSuccess,onError);
