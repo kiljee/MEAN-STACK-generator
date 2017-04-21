@@ -28,9 +28,10 @@ ValidationLength:
 Action:
 'ADD' | 'DELETE' | 'EDIT'
 ;
+
 // Type can be SimpleType or Entity
 Type:
-    SimpleType | Entity
+    SimpleType | Entity 
 ;
 
 SimpleType:

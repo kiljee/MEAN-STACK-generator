@@ -3,21 +3,21 @@
 var mongoose = require('mongoose'), Schema = mongoose.Schema
 var validate = require('mongoose-validator');
 
-var imeValidator = [
+var nameValidator = [
   validate({
     validator: 'isLength',
     arguments: [1, 20],
-    message: 'Ime should be between {ARGS[0]} and {ARGS[1]} characters'
+    message: 'Name should be between {ARGS[0]} and {ARGS[1]} characters'
   }),
   validate({
     validator: 'isAlpha',
     passIfEmpty: true,
-    message: 'Ime should contain alpha-numeric characters only'
+    message: 'Name should contain alpha-numeric characters only'
   })
 ];
 
 var BankSchema = new mongoose.Schema({
-  bar:   [{ type: Schema.Types.ObjectId, ref: 'Address' }]   ,  ime:    {type:String, required: true 
- , validate:imeValidator}})
+  bar:   [{ type: Schema.Types.ObjectId, ref: 'Address' }]   ,  name:    {type:String, required: true
+ , validate:nameValidator}})
 
 module.exports = mongoose.model('BankSchema', BankSchema)

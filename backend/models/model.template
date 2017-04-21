@@ -46,7 +46,7 @@ var {{property.name}}Validator = [
 var {{entity.name}}Schema = new mongoose.Schema({
   {% for property in entity.properties %}
   {%set vrednost = {'provera' :  True}%}
-  {{property.name}}:{%for ent in entities%} {%if ent.name == property.type | javatype %} {% if vrednost.update({'provera': False}) %}{% endif %} [{ type: Schema.Types.ObjectId, ref: '{{ent.name}}' }]{% endif %}{%endfor%} {%if vrednost.provera%}{{vrednost.foo}}{type:{{property.type | javatype}}, required: true 
+  {{property.name}}:{%for ent in entities%} {%if ent.name == property.type | javatype %} {% if vrednost.update({'provera': False}) %}{% endif %} [{ type: Schema.Types.ObjectId, ref: '{{ent.name}}' }]{% endif %}{%endfor%} {%if vrednost.provera%}{{vrednost.foo}}{type:{{property.type | javatype}}, required: true
       {% if property.validationAlpha or property.validationLength %} , validate:{{property.name}}Validator{% endif %}}{%endif%}{%if loop.index != entity.properties |length%},{% endif %}
   {% endfor %}
 })

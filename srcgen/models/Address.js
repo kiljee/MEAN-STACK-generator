@@ -26,9 +26,9 @@ var countryValidator = [
 ];
 
 var AddressSchema = new mongoose.Schema({
-  street:    {type:String, required: true 
- , validate:streetValidator},  city:    {type:String, required: true 
- , validate:cityValidator},  country:    {type:String, required: true 
+  street:    {type:String, required: true
+ , validate:streetValidator},  city:    {type:String, required: true
+ , validate:cityValidator},  country:    {type:String, required: true
  , validate:countryValidator}})
 
 module.exports = mongoose.model('AddressSchema', AddressSchema)

@@ -17,7 +17,7 @@ mongoose.connect(dbUrl, function(err, res){
 
 var Address = require('./routes/Address')
 var Bank = require('./routes/Bank')
-var Covek = require('./routes/Covek')
+var User = require('./routes/User')
 var app = express();
 
 // view engine setup
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/address' ,Address);
 app.use('/bank' ,Bank);
-app.use('/covek' ,Covek);
+app.use('/user' ,User);
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
