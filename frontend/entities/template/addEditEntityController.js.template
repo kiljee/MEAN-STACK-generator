@@ -12,6 +12,8 @@
 				{
 						var operation = $stateParams.operation;
 
+                        $scope.errors = false
+
 						if (operation === undefined || operation === null)
 						$state.go('all{{entity.name}}')
 
@@ -32,6 +34,7 @@
 									},
 									function(response) {
 										console.log(response)
+                                        $scope.errors = true
 								});
 							}
 						}

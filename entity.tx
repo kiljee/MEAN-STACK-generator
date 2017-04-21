@@ -15,9 +15,14 @@ Entity:
 ;
 
 Property:
-    name=ID ':' type=[Type]     // type is a reference to Type instance.
+    name=ID ':' type=[Type] (validationAlpha='alpha')? (validationLength=ValidationLength)?
+                                // type is a reference to Type instance.
                                 // There are two built-in simple types
                                 // registered on meta-model in entity_test.py
+;
+
+ValidationLength:
+  '[' 'min' min=INT ',' 'max' max=INT ']'
 ;
 
 Action:
