@@ -17,7 +17,7 @@ var nameValidator = [
 ];
 
 var BankSchema = new mongoose.Schema({
-  bar:   [{ type: Schema.Types.ObjectId, ref: 'Address' }]   ,  name:    {type:String, required: true
+  bar:   [{ type: Schema.Types.ObjectId, ref: 'Address' }]    ,  name:     {type:String, required: true
  , validate:nameValidator}})
 
 module.exports = mongoose.model('BankSchema', BankSchema)

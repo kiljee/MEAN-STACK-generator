@@ -18,6 +18,7 @@ mongoose.connect(dbUrl, function(err, res){
 var Address = require('./routes/Address')
 var Bank = require('./routes/Bank')
 var User = require('./routes/User')
+var Car = require('./routes/Car')
 var app = express();
 
 // view engine setup
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/address' ,Address);
 app.use('/bank' ,Bank);
 app.use('/user' ,User);
+app.use('/car' ,Car);
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

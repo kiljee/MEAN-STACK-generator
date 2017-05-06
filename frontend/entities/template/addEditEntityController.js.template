@@ -40,6 +40,8 @@
 						}
 
 						//editing
+
+
 						if( operation === 'edit'){
 							$scope.editFlag = true
 							var id = sessionStorage.getItem('entityId')
@@ -50,7 +52,9 @@
 								},
 								function(response) {
 									console.log(response)
+
 							})
+
 							$scope.editSave = function (){
 							{{entity.name | lower}}Service.edit($scope.{{entity.name | lower}},
 									function(response) {
@@ -58,6 +62,7 @@
 									},
 									function(response) {
 										console.log(response)
+											$scope.errors = true
 								})
 							}
 						}

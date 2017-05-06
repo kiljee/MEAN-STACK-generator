@@ -74,12 +74,14 @@ router.post('/edit/:id',function(req,res,next){
 
   BankCtrl.update(req.params.id,req.body, function(err, results){
     if(err){
-      res.json({
-        confirmation: "fail",
-        message: err
+      res.status(400).json({
+        confirmation: 'fail',
+        message: err,
+        status: 400
       })
-      return
+
     }
+    else
     res.json({
       confirmation: 'success',
       results: results
