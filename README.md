@@ -52,9 +52,11 @@ To run the example do the following:
 
   This will produce Mean Stack app with backend in `srcgen` and the frontend in front-gen.
   install MongoDB
-  -srcgen
+- srcgen
+
   npm install
-  -front-gen
+- front-gen
+
   bower install
 
 # jsdProject
