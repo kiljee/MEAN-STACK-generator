@@ -17,9 +17,9 @@ example model is than parsed/instantiated by the meta-model and both meta-model
 and model are exported to .dot files in the folder `dotexport`.
 
 An example of code generation is presented in the program `entity_codegen.py`.
-The code is generated in the `srcgen` subfolder using
+The code is generated in the `srcgen` and `front-gen` subfolder using
 [jinja2](http://jinja.pocoo.org/docs/dev/) template engine and the template
-`java.template`. For each Entity instance one java file is generated.
+`java.template`.
 
 **Note:** Meta-model/grammar can be checked/visualized by `textx` command line
 tool but model can't because it depends on two built-in simple types (`integer`
@@ -30,14 +30,14 @@ To run the example do the following:
 
 - Verify that textX is installed. See documentation how to do that.
 - Install [Jinja2]() for code generation
-    
+
         $ pip install Jinja2
 
 - From the Entity example folder run
 
         $ python entity_test.py
 
-- Previous command will generate dot files in `dotexport` folder. To convert 
+- Previous command will generate dot files in `dotexport` folder. To convert
   those files to PNG format do (you must have [GraphViz](http://graphviz.org/)
   installed):
 
@@ -50,7 +50,11 @@ To run the example do the following:
 
         $ python entity_codegen.py
 
-  This will produce Java files `Address.java` and `Person.java` in `srcgen`
-  folder that corresponds to entities from the Person model.
+  This will produce Mean Stack app with backend in `srcgen` and the frontend in front-gen.
+  install MongoDB
+  -srcgen
+  npm install
+  -front-gen
+  bower install
 
 # jsdProject
