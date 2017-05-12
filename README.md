@@ -19,7 +19,7 @@ and model are exported to .dot files in the folder `dotexport`.
 An example of code generation is presented in the program `entity_codegen.py`.
 The code is generated in the `srcgen` and `front-gen` subfolder using
 [jinja2](http://jinja.pocoo.org/docs/dev/) template engine and the template
-`java.template`.
+`*.template`.
 
 **Note:** Meta-model/grammar can be checked/visualized by `textx` command line
 tool but model can't because it depends on two built-in simple types (`integer`
